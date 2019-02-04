@@ -1,0 +1,66 @@
+
+//resposive break points
+$pc: 1024px;
+$tab: 680px;
+$sp: 480px;
+
+@mixin beyondpc {
+  @media screen and (min-width: ($pc)) {
+    @content
+  }
+}
+
+@mixin pc {
+  @media screen and (max-width: ($pc)) {
+    @content
+  }
+}
+
+@mixin tab {
+  @media screen and (max-width: ($tab)) {
+    @content
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content
+  }
+}
+
+//menu for pc
+.ui.small.menu.pc{
+  margin: 0px;
+  @include beyondpc{
+    display: flex;
+  }
+  @include pc{
+    display: flex;
+  }
+
+  @include tab {
+    display: none;
+  }
+
+  @include sp{
+    display: none;
+  }
+}
+
+//menu for tab & sp
+.ui.top.fixed.menu.sp{
+  @include beyondpc{
+    display: none;
+  }
+  @include pc{
+    display: none;
+  }
+
+  @include tab {
+    display: flex;
+  }
+
+  @include sp{
+    display: flex;
+  }
+}
