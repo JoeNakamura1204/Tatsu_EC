@@ -1,7 +1,7 @@
 
 //resposive break points
 $pc: 1024px;
-$tab: 680px;
+$tab: 780px;
 $sp: 480px;
 
 @mixin beyondpc {
@@ -29,8 +29,15 @@ $sp: 480px;
 }
 
 //menu for pc
-.ui.small.menu.pc{
-  margin: 0px;
+.menu.pc{
+  width:100%;
+  padding: 0px 10px 0px 10px;
+  text-align: center;
+  display: block;
+  z-index: 999;
+  //background:white;
+  height: 70px;
+  position: fixed;
   @include beyondpc{
     display: flex;
   }
@@ -45,6 +52,36 @@ $sp: 480px;
   @include sp{
     display: none;
   }
+  .items{
+    vertical-align: middle;
+    line-height: 40px;
+    display: block;
+    position: relative;
+    width: 100%;
+    .left.menu,.right.menu{
+      position: fixed;
+
+      font-family: "Apple Braille";
+      padding: 15px;
+      .item{
+        color: #2E2F30;
+        padding: 25px;
+
+      }
+    }
+    .right.menu{
+      margin: auto;
+      position: fixed;
+      right: 10px;
+      a{
+        color: #2E2F30;
+      }
+    }
+    .left.menu{
+      font-weight: bold;
+    }
+  }
+
 }
 
 //menu for tab & sp

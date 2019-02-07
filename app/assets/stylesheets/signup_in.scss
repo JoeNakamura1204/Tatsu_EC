@@ -1,0 +1,31 @@
+@import "menu";
+
+.column.column{
+  margin-top:5rem;
+  max-width: 500px;
+}
+
+.ui.stacked.segment{
+  background: aliceblue;
+  @include sp
+}
+label{
+  text-align: left;
+}
+
+//about profile page from here
+.ui.piled.segment.profile{
+  padding: 4%;
+  font-weight: normal;
+  background: #EFEFEF;
+  &:first-child{
+    margin: auto;
+    max-width: 800px;
+    margin-top:8rem;
+ }
+}
+
+.col-xs-4.profile{
+  margin-right: 4rem;
+  margin-left: 2rem;
+}

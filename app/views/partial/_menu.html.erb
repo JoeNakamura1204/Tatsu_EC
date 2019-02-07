@@ -1,23 +1,18 @@
 
 <!--menu for pc-->
-<div class="ui small menu pc">
-  <a class="active item">
-    Home
-  </a>
-  <a class="item">
-    Messages
-  </a>
-  <div class="right menu">
-    <div class="ui dropdown item">
-      Language <i class="dropdown icon"></i>
-      <div class="menu">
-        <a class="item">English</a>
-        <a class="item">Russian</a>
-        <a class="item">Spanish</a>
-      </div>
-    </div>
-    <div class="item">
-      <div class="ui primary button">Sign Up</div>
+<div class="menu pc">
+  <div class="items">
+    <div class="left menu item">TATSU EC</div>
+    <div class="right menu">
+      <a class="item">
+        <i class="shopping cart icon"></i>
+      </a>
+      <% if current_user  %>
+        <%= link_to current_user.name, current_user %>様
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "item" %>
+      <% else %>
+        <%= link_to "Sign in",  new_user_session_path, class: "item" %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -32,6 +27,14 @@
   </a>
   <a class="item">
     <i class="bullhorn icon"></i>News
+  </a>
+
+  <a>
+    <% if current_user  %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete,:class =>"item" %>
+    <% else %>
+      <%= link_to "Sign in",  new_user_session_path,:class =>"item" %>
+    <% end %>
   </a>
 </div>
 
