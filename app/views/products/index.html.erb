@@ -1,0 +1,18 @@
+<div class="products index">
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-sm-6">
+        <div class="product">
+          <%= link_to  product_path(product)  do %>
+            <div class="img">
+              <%=image_tag product.photos[0].photo.to_s  %>
+              <!--            for hover  -->
+              <div class="mask"></div>
+            </div>
+            <div class="product_name"><%= product.product_name  %></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
