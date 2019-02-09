@@ -36,8 +36,7 @@ gem 'jbuilder', '~> 2.5'
 #
 # add gem from here
 gem 'devise'
-gem 'cancancan'
-gem 'rails_admin'
+gem 'activeadmin'
 gem "jquery-rails"
 gem 'bootstrap', '~> 4.1.3'
 gem 'carrierwave', '~> 1.0'

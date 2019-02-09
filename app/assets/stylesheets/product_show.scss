@@ -1,0 +1,101 @@
+.product.show{
+  .product_image{
+    max-height: 600px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .about_product{
+    padding: 0rem 2rem 2rem 0em;
+
+    ul{
+      padding-left: 15rem;
+      list-style: none;
+      font-size: 16px;
+      font-weight: normal;
+      margin-left:3rem;
+      @media screen and (max-width: 780px) {
+        padding-left: 5rem;
+      }
+
+      li {
+        word-break: break-all;
+        line-height: 50px;
+        font-weight: 200;
+        @media screen and (max-width: 780px) {
+          line-height: 40px;
+        }
+
+        .product_name:before {
+          font-weight: 500;
+          content: "Product Name";
+          position: absolute;
+          font-size: 14px;
+          left: 30px;
+          @media screen and (max-width: 780px) {
+            font-size: 12px;
+            left: 16px;
+          }
+        }
+
+        .description:before {
+          content: "description";
+          font-weight: 500;
+          position: absolute;
+          font-size: 14px;
+          left: 30px;
+          @media screen and (max-width: 780px) {
+            font-size: 12px;
+            left: 16px;
+          }
+        }
+
+        .price:before {
+          font-weight: 500;
+          content: 'price';
+          position: absolute;
+          font-size: 14px;
+          left: 30px;
+          @media screen and (max-width: 780px) {
+            font-size: 12px;
+            left: 16px;
+          }
+        }
+
+        .size{
+          margin-bottom:2rem;
+          &::before {
+            font-weight: 500;
+            content: 'size';
+            position: absolute;
+            font-size: 14px;
+            left: 30px;
+            @media screen and (max-width: 780px) {
+              font-size: 12px;
+              left: 16px;
+            }
+          }
+        }
+          .color:before{
+            font-weight: 500;
+            content: 'color';
+            position: absolute;
+            font-size: 14px;
+            left:30px;
+            @media  screen and (max-width: 780px) {
+              font-size: 12px;
+              left:16px;
+            }
+          }
+        }
+      }
+    }
+    .fluid.ui.black.button.cart{
+      height: 4rem;
+      position: relative;
+      top: 5rem;
+      i{
+        margin-left: 1rem;
+      }
+    }
+  }
+

@@ -1,1 +1,53 @@
-<%= @product.product_name %>
+<div class="product show">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="product_image">
+        <%= image_tag @product.photos[0].photo.to_s  %>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="about_product">
+          <ul>
+            <li>
+              <span class="product_name"><%= @product.product_name %></span>
+            </li>
+
+            <li>
+              <span class="description"><%= @product.description %></span>
+            </li>
+
+            <li>
+              <span class="price"><%= @product.price %></span>
+            </li>
+
+            <li>
+              <div class="size">
+                <select name="size" class="ui fluid dropdown">
+                  <option value="">S</option>
+                  <option value="">L</option>
+                  <option value="">M</option>
+                  <option value="">XL</option>
+                </select>
+              </div>
+            </li>
+
+            <li>
+              <div class="color">
+                <select name="color" class="ui fluid dropdown">
+                  <option value="">black</option>
+                  <option value="">white</option>
+                  <option value="">grey</option>
+                </select>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      <button class="fluid ui black button cart">
+        Add to Cart<i class="shopping cart icon"></i>
+      </button>
+      </div>
+    </div>
+  </div>
+</div>
