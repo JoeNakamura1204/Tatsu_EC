@@ -2,7 +2,7 @@ ActiveAdmin.register Product do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :product_name, :price, :description, :category_id, photo:[]
+permit_params :product_name, :price, :description, :category_id, photos:[]
 
   form do |f|
     f.inputs do
@@ -10,7 +10,7 @@ permit_params :product_name, :price, :description, :category_id, photo:[]
       f.input :price
       f.input :category, as: :select, collection: Category.all.map { |c| [c.category_name, c.id]}
       f.input :description
-      f.input :photos, as: :file
+      f.input :photos, as: :file, input_html:{multiple:true}
     end
     f.actions
   end

@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="product_image">
-        <%= image_tag @product.photos[0].photo.to_s  %>
+        <% @product.photos.each do |photo| %>
+          <%= image_tag photo.url  %>
+        <% end %>
       </div>
     </div>
 

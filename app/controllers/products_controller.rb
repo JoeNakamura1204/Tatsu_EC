@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-    @photo = Photo.first
   end
 
   def show
