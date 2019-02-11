@@ -1,5 +1,6 @@
 class Stock < ApplicationRecord
   belongs_to :product
+  has_many :carts
 
   validates :product_id, uniqueness:{scope: [:size, :color]}
 

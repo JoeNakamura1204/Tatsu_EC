@@ -10,6 +10,7 @@
 
     <div class="col-sm-6">
       <div class="about_product">
+        <%= form_tag cart_index_path, method: :post do  %>
           <ul>
             <li>
               <span class="product_name"><%= @product.product_name %></span>
@@ -22,33 +23,50 @@
             <li>
               <span class="price"><%= @product.price %></span>
             </li>
-
             <li>
-              <div class="size">
-                <select name="size" class="ui fluid dropdown">
-                  <option value="">S</option>
-                  <option value="">L</option>
-                  <option value="">M</option>
-                  <option value="">XL</option>
-                </select>
-              </div>
+                <%= hidden_field_tag 'cart[product_id]', @product.id%>
+                <div class="size">
+                  <% if @product.stocks.size > 0 %>
+                    <% @product.stocks.each do |product| %>
+                     <%= select_tag 'cart[size]', options_for_select("#{product.size}"=>"#{product.size}"),class:"ui fluid dropdown" %>
+                    <% end %>
+                  <% else %>
+                    <%= select_tag 'cart[size]',:disabled, class:"ui fluid dropdown" %>
+                  <% end %>
+                </div>
             </li>
 
             <li>
               <div class="color">
-                <select name="color" class="ui fluid dropdown">
-                  <option value="">black</option>
-                  <option value="">white</option>
-                  <option value="">grey</option>
-                </select>
+                  <% if @product.stocks.size > 0 %>
+                    <% @product.stocks.each do |product| %>
+                      <%= select_tag 'cart[color]', options_for_select("#{product.color}"=>"#{product.color}"),class:"ui fluid dropdown" %>
+                    <% end %>
+                  <% else %>
+                    <%= select_tag 'cart[color]',:disabled, class:"ui fluid dropdown" %>
+                  <% end %>
               </div>
             </li>
+            <li>
+              <div class="amount">
+                <div class="ui form">
+                  <div class="field ">
+                      <%= number_field_tag 'cart[:amount]', class:"two wide field", placeholder:1 %>
+                  </div>
+                </div>
+              </div>
 
+            </li>
           </ul>
+
+          <button class="fluid ui black button cart">
+            <%= submit_tag('Add to Cart', :style => "display: none;" )%>
+            Add To Cart<i class="shopping cart icon"></i>
+          </button>
+
+          <% end %>
         </div>
-      <button class="fluid ui black button cart">
-        Add to Cart<i class="shopping cart icon"></i>
-      </button>
+
       </div>
     </div>
   </div>

@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :addresses
+  has_many :carts
   before_create :build_default_profile
 
   enum sex: { "男": 0, "女": 1 }
