@@ -1,3 +1,31 @@
 // Place all the styles related to the cart controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cart.header{
+  font-size: 16px;
+  font-weight: 200;
+  text-align: center;
+  i{
+    margin-left:1rem;
+  }
+}
+
+.cart_item{
+  img{
+    width:15%;
+  }
+  .info{
+    margin-left: 2rem;
+    font-size: 14px;
+    font-weight: 200;
+    .amount{
+      margin-left: 2rem;
+      font-size: 12px;
+    }
+    .price{
+      margin-left: 4rem;
+      font-size: 12px;
+    }
+  }
+}

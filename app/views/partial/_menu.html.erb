@@ -5,9 +5,11 @@
     <div class="left menu item">
       <%= link_to "TATSU EC", root_path %></div>
     <div class="right menu">
-      <a class="item">
-        <i class="shopping cart icon"></i>
-      </a>
+      <span class="item">
+        <%= link_to cart_index_path do %>
+          <i class="shopping cart icon"></i>
+        <% end %>
+      </span>
       <% if current_user  %>
         <%= link_to current_user.name, current_user %>様
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "item" %>

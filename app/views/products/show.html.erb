@@ -40,10 +40,10 @@
               <div class="color">
                   <% if @product.stocks.size > 0 %>
                     <% @product.stocks.each do |product| %>
-                      <%= select_tag 'cart[color]', options_for_select("#{product.color}"=>"#{product.color}"),class:"ui fluid dropdown" %>
+                      <%= select_tag 'cart[color]', options_for_select("#{product.color}"=>"#{product.color}"),class:"ui fluid dropdown",required:true %>
                     <% end %>
                   <% else %>
-                    <%= select_tag 'cart[color]',:disabled, class:"ui fluid dropdown" %>
+                    <%= select_tag 'cart[color]',:disabled, class:"ui fluid dropdown",required:true %>
                   <% end %>
               </div>
             </li>
@@ -51,7 +51,7 @@
               <div class="amount">
                 <div class="ui form">
                   <div class="field ">
-                      <%= number_field_tag 'cart[:amount]', class:"two wide field", placeholder:1 %>
+                      <%= number_field_tag 'cart[amount]', class:"two wide field", required:true %>
                   </div>
                 </div>
               </div>

@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :addresses
   has_many :carts
+  has_many :order_items
+  has_many :orders
   before_create :build_default_profile
 
   enum sex: { "男": 0, "女": 1 }

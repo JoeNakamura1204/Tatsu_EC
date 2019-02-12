@@ -1,3 +1,25 @@
-Cart
+<div class="row">
+  <div class="col-sm-6 mx-auto">
+    <p class="cart header">YOUR SHOPPING CART<i class="shopping cart icon"></i></p>
+    <div class="ui divider"></div>
+    <div class="cart_item">
+      <% @carts.each do |cart| %>
+        <p>
+          <%= image_tag cart.stock.product.photos[0].url %>
+          <span class="info">
+            <%= cart.stock.product.product_name %>
+            <span class="amount">amount<%= cart.amount %></span>
+            <span class="price">¥<%= cart.stock.product.price %></span>
+          </span>
+        </p>
+        <div class="ui divider"></div>
+      <% end %>
+    </div>
 
-@cart
+    <button class="fluid ui black button cart">
+      PROCEED TO PAYMENT
+    </button>
+  </div>
+</div>
+
+
